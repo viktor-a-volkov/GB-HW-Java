@@ -2,7 +2,7 @@
  * GB Java. Homework 3
  *
  * @author Viktor A. Volkov
- * @version 20.02.2022
+ * @version 27.02.2022
  */
 class HWApp3 {
 
@@ -11,6 +11,7 @@ class HWApp3 {
         int[] arr3 = {1, 5, 3, 2, 11, 4, 5, 2, 4, 8, 9, 1};
         int[] arr6 = {1, 5, 3, 2, 11, 4, 5, 2, 4, 8, 9, 1};
         int[] arr7 = {1, 1, 2, 2};
+
         System.out.println("Task 1: ");
         task1(arr1);
         System.out.println("\nTask 2: ");
@@ -27,7 +28,7 @@ class HWApp3 {
         System.out.println(task7(arr7));
     }
 
-    public static void task1(int[] arr) {
+    static void task1(int[] arr) {
         for (int i = 0; i < arr.length; i++) {
             if (arr[i] == 0) {
                 arr[i] = 1;
@@ -38,7 +39,7 @@ class HWApp3 {
         }
     }
 
-    public static void task2(int size) {
+    static void task2(int size) {
         int[] arr = new int[size];
         for (int i = 0; i < arr.length; i++) {
             arr[i] = i + 1;
@@ -46,7 +47,7 @@ class HWApp3 {
         }
     }
 
-    public static void task3(int[] arr) {
+    static void task3(int[] arr) {
         for (int i = 0; i < arr.length; i++) {
             if (arr[i] < 6) {
                 arr[i] = arr[i] * 2;
@@ -55,7 +56,7 @@ class HWApp3 {
         }
     }
 
-    public static void task4() {
+    static void task4() {
         int[][] arr = {
                 {1, 2, 3},
                 {4, 5, 6},
@@ -71,7 +72,7 @@ class HWApp3 {
         }
     }
 
-    public static void task5(int len, int initialValue){
+    static int[] task5(int len, int initialValue){
         int[] arr = new int[len];
         for (int i = 0; i < len; i++) {
             arr[i] = initialValue;
@@ -79,7 +80,7 @@ class HWApp3 {
         }
     }
 
-    public static void task6 ( int[] arr){
+    static void task6 ( int[] arr){
         int max = arr[0];
         int min = arr[0];
 
@@ -97,7 +98,7 @@ class HWApp3 {
         System.out.println(min);
     }
 
-    public static boolean task7( int[] arr){
+    static boolean task7( int[] arr){
         int rightSum = 0;
         int leftSum = 0;
         for (int i = 0; i < arr.length; i++) {
