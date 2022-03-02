@@ -2,7 +2,7 @@
  * GB Java. Homework 2
  *
  * @author Viktor A. Volkov
- * @version 20.02.2022
+ * @version 20.2.2022
  */
 class HWApp2 {
 

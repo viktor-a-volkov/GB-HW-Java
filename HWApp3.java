@@ -2,8 +2,10 @@
  * GB Java. Homework 3
  *
  * @author Viktor A. Volkov
- * @version 27.02.2022
+ * @version 27.2.2022
  */
+import java.util.Arrays;
+
 class HWApp3 {
 
     public static void main(String[] args) {
@@ -26,6 +28,11 @@ class HWApp3 {
         task6(arr6);
         System.out.println("\nTask 7: ");
         System.out.println(task7(arr7));
+        /**
+        System.out.println("\nTask 8: ");
+        System.out.println(Arrays.toString(shiftArr(new int[] {1, 2, 3, 4, 5}, 2)));
+        System.out.println(Arrays.toString(shiftArr(new int[] {1, 2, 3, 4, 5}, -3)));
+        */
     }
 
     static void task1(int[] arr) {
@@ -113,5 +120,19 @@ class HWApp3 {
         return false;
     }
 
-
+    /**static int[] task8(int[] array, int shift) {
+        shift = shift % array.length;
+        if (shift < 0) {
+            shift += array.length;
+        }
+        for (int cnt = 0; cnt < shift; cnt++) {
+            int tmp = array[array.length - 1];
+            for (int i = array.length - 1; i > 0; i--) {
+                array[i] = array[i - 1];
+            }
+            array[0] = tmp;
+        }
+        return array;
+    }
+    */
 }
