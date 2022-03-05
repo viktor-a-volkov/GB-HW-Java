@@ -2,7 +2,7 @@
  * GB Java. Homework 4
  *
  * @author Viktor A. Volkov
- * @version 2.3.2022
+ * @version 4.3.2022
  */
 import java.util.Random;
 import java.util.Scanner;
@@ -80,6 +80,18 @@ class HWApp4 {
 
     void turnAI() {
         int x, y;
+        for (x = 0; x < 3; x++) {
+            for (y = 0; y < 3; y++) {
+                if (isCellValid(x, y)) {
+                    map[y][x] = 'X';
+                    if (checkWin('X')) {
+                        map[y][x] = 'O';
+                        return;
+                    }
+                    map[y][x] = '.';
+                }
+            }
+        }
         do {
             x = random.nextInt(3);
             y = random.nextInt(3);
@@ -99,22 +111,11 @@ class HWApp4 {
             if ((map[i][0] == ch && map[i][1] == ch && map[i][2] == ch) ||
                 (map[0][i] == ch && map[1][i] == ch && map[2][i] == ch))
                 return true;
-            }
+        }
             if ((map[0][0] == ch && map[1][1] == ch && map[2][2] == ch) ||
-                (map[2][0] == ch && map[1][1] == ch && map[0][2] == ch))
+                (map[2][0] == ch && map[1][1] == ch && map[0][2] == ch)) {
                 return true;
-        /** Простая проверка
-        if (map[0][0] == ch && map[0][1] == ch && map[0][2] == ch) return true;
-        if (map[1][0] == ch && map[1][1] == ch && map[1][2] == ch) return true;
-        if (map[2][0] == ch && map[2][1] == ch && map[2][2] == ch) return true;
-        //
-        if (map[0][0] == ch && map[1][0] == ch && map[2][0] == ch) return true;
-        if (map[0][1] == ch && map[1][1] == ch && map[2][1] == ch) return true;
-        if (map[0][2] == ch && map[1][2] == ch && map[2][2] == ch) return true;
-        //
-        if (map[0][0] == ch && map[1][1] == ch && map[2][2] == ch) return true;
-        if (map[2][0] == ch && map[1][1] == ch && map[0][2] == ch) return true;
-        */
+            }
         return false;
     }
 
