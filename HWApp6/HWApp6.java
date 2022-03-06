@@ -44,7 +44,7 @@ abstract class Animal implements IAnimal {
     protected int runLimit;
     protected int swimLimit;
     protected String className;
-    protected static int countOfAnimals = 0;
+    protected static int countOfAnimals;
 
     Animal (int runLimit, int swimLimit) {
         this.runLimit = runLimit;
@@ -60,7 +60,7 @@ abstract class Animal implements IAnimal {
     public static int getCountOfAnimals() {
         return countOfAnimals;
     }
-    
+
     @Override
     public String run(int distance) {
         if (distance > runLimit) {
@@ -70,7 +70,7 @@ abstract class Animal implements IAnimal {
             return className + " was able to run " + distance;
         }
     }
-    
+
     @Override
     public String swim(int distance) {
         if (distance > swimLimit) {
@@ -80,7 +80,7 @@ abstract class Animal implements IAnimal {
             return className + " was able to swim " + distance;
         }
     }
-    
+
     @Override
     public String toString() {
         return className + ". runLimit: " + runLimit + ", swimLimit: " + swimLimit;
