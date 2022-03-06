@@ -29,11 +29,12 @@ class Dog extends Animal {
         super(runLimit, swimLimit);
     }
 }
+
 class Cat extends Animal {
     Cat (int runLimit) {
         super(runLimit, 0);
     }
-    
+
     @Override
     public String swim(int distance) {
         return getClassName() + " does not swim!";
@@ -52,11 +53,11 @@ abstract class Animal implements IAnimal {
         className = getClass().getSimpleName();
         countOfAnimals++;
     }
-    
+
     public String getClassName() {
         return className;
     }
-    
+
     public static int getCountOfAnimals() {
         return countOfAnimals;
     }
